@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+   
+        <link rel="stylesheet" href="css/tooplate-style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    </head>
+    <body>
+        <footer>
+            <img src="PHOENIX.png" name="logo" alt="logo" width="200px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="primary-button">
+                            <a href="#" class="scroll-top">Back To Top</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="social-icons">
+                            <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12">
+                        <p>Copyright &copy; 2022 Flight Tour and Travel Company
+                    
+                    | Design: <a href="http://www.tooplate.com/view/2093-flight" target="_parent"><em>DEA</em></a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
