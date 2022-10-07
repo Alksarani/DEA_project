@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
 	<div class="col-lg-12">
-		<div class="card">
+		<div class="card" style="margin-top: 75px;">
 			<div class="card-header">
 				<large class="card-title">
 					<b>Booked Flights List</b>
