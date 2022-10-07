@@ -98,7 +98,7 @@
 	}
 </style>
 <script>
-	 function _reset(){
+	function _reset(){
 		$('#cimg').attr('src','');
 		$('[name="id"]').val('');
 		$('#manage-airlines').get(0).reset();
