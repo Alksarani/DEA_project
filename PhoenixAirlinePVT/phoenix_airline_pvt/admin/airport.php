@@ -83,8 +83,8 @@
 		</div>
 	</div>	
 
-< /div>
-< style>
+</div>
+<style>
 	
 	td{
 		vertical-align: middle !important;
