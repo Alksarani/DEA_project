@@ -12,7 +12,7 @@ Class Action {
 	}
 	function __destruct() {
 	    $this->db->close();
-	    ob_end_ flush();
+	    ob_end_flush();
 	}
 
 	function login(){
