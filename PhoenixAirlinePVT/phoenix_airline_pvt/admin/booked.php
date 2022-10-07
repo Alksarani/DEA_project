@@ -97,8 +97,8 @@
 		_conf("Are you sure to delete this data?","delete_booked",[$(this).attr('data-id')])
 	})
 function delete_booked($id){
-		 start_load()
-		 $.ajax({
+		start_load()
+		$.ajax({
 			url:'ajax.php?action=delete_flight',
 			method:'POST',
 			data:{id:$id},
