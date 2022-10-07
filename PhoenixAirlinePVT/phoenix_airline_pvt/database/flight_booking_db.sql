@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2020 at 10:21 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- Generation Time: Oct 07, 2022 at 11:30 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,9 +38,12 @@ CREATE TABLE `airlines_list` (
 --
 
 INSERT INTO `airlines_list` (`id`, `airlines`, `logo_path`) VALUES
-(1, 'AirAsia', '1600999080_kisspng-flight-indonesia-airasia-airasia-japan-airline-tic-asia-5abad146966736.8321896415221927106161.jpg'),
-(2, 'Philippine Airlines', '1600999200_Philippine-Airlines-Logo.jpg'),
-(3, 'Cebu Pacific', '1600999200_43cada0008538e3c1a1f4675e5a7aabe.jpeg');
+(1, 'Turkish Airlines', 'airline1.png'),
+(2, 'Qatar Airways', 'airline2.jpg'),
+(3, 'Etihad Airways', 'airline3.png'),
+(4, 'Emirates', 'airline4.png'),
+(5, 'British Airways', 'airline5.jpg'),
+(6, 'SriLankan Airline', 'airline6.jpeg');
 
 -- --------------------------------------------------------
 
@@ -59,11 +62,20 @@ CREATE TABLE `airport_list` (
 --
 
 INSERT INTO `airport_list` (`id`, `airport`, `location`) VALUES
-(1, 'NAIA', 'Metro Manila'),
-(2, 'Beijing Capital International Airport', 'Chaoyang-Shunyi, Beijing'),
-(3, 'Los Angeles International Airport', 'Los Angeles, California'),
-(4, 'Dubai International Airport', 'Garhoud, Dubai'),
-(5, 'Mactan-Cebu Airport', 'Cebu');
+(1, 'Kansai International Airport', 'Japan'),
+(2, 'Chennai Airport', 'India'),
+(3, 'Thiruvananthapuram International Airport', 'India'),
+(4, 'Kualalumpur Lumpur International ', 'Malaysia'),
+(5, 'Phukaet Internationa Airport', 'Thailand'),
+(6, 'Jinnah Internationa Airport, Karchi', 'Pakistan'),
+(7, 'Multan International Airport', 'Pakistan'),
+(8, 'Singapore Changi Airport', 'Singapore'),
+(9, 'Seletar', 'Singapore'),
+(10, 'Colombo International Airport', 'Sri lanka'),
+(11, 'Turkey Airport', 'Turkey'),
+(12, 'Konya Airport', 'Turkey'),
+(13, 'Istanbul', 'Turkey'),
+(14, 'Belji', 'China');
 
 -- --------------------------------------------------------
 
@@ -136,7 +148,7 @@ CREATE TABLE `system_settings` (
 --
 
 INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `about_content`) VALUES
-(1, 'Online Flight Booking System', 'info@sample.comm', '+6948 8542 623', '1600998360_travel-cover.jpg', '&lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;span style=&quot;background: transparent; position: relative; font-size: 14px;&quot;&gt;&lt;span style=&quot;font-size:28px;background: transparent; position: relative;&quot;&gt;&lt;b style=&quot;margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; text-align: justify;&quot;&gt;Lorem Ipsum&lt;/b&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; font-weight: 400; text-align: justify;&quot;&gt;&amp;nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;');
+(1, 'Phoenix Airline Flight Booking', 'phoenixairlinepvt@gmail.com', '0115 123 456', '1664958240_background5.jpeg', '&lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;span style=&quot;background: transparent; position: relative; font-size: 14px;&quot;&gt;&lt;span style=&quot;font-size:28px;background: transparent; position: relative;&quot;&gt;&lt;b style=&quot;margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; text-align: justify;&quot;&gt;Lorem Ipsum&lt;/b&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; font-weight: 400; text-align: justify;&quot;&gt;&amp;nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;');
 
 -- --------------------------------------------------------
 
@@ -146,36 +158,26 @@ INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `a
 
 CREATE TABLE `users` (
   `id` int(30) NOT NULL,
-  `doctor_id` int(30) NOT NULL,
+  `user_id` int(30) NOT NULL,
   `name` varchar(200) NOT NULL,
   `address` text NOT NULL,
   `contact` text NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `type` tinyint(1) NOT NULL DEFAULT 2 COMMENT '1=admin , 2 = doctor,3=patient'
+  `type` tinyint(1) NOT NULL DEFAULT 2 COMMENT '1=admin , 2=staff ,3=passenger'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `doctor_id`, `name`, `address`, `contact`, `username`, `password`, `type`) VALUES
+INSERT INTO `users` (`id`, `user_id`, `name`, `address`, `contact`, `username`, `password`, `type`) VALUES
 (1, 0, 'Administrator', '', '', 'admin', 'admin123', 1),
-(7, 0, 'George Wilson', 'Sample Only', '+18456-5455-55', 'gwilson@sample.com', 'd40242fb23c45206fadee4e2418f274f', 3),
-(9, 2, 'DR.James Smith, M.D.', 'Sample Clinic Address', '+1456 554 55623', 'jsmith@sample.com', 'jsmith123', 2),
-(10, 3, 'DR.Claire Blake, M.D.', 'Sample Only', '+5465 555 623', 'cblake@sample.com', 'blake123', 2),
-(11, 0, 'Sample Only', 'Sample', '+5465 546 4556', 'sample@sample.com', '4e91b1cbe42b5c884de47d4c7fda0555', 3),
-(15, 9, 'DR.Sample Doctor, M.D.', 'Sample Address', '+1235 456 623', 'sample2@sample.com', 'sample123', 2);
+(2, 0, 'a.l.k.sathsarani', '', '', 'sathsarani', 'kaushi1998', 2);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `airlines_list`
---
-ALTER TABLE `airlines_list`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `airport_list`
@@ -212,16 +214,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `airlines_list`
---
-ALTER TABLE `airlines_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `airport_list`
 --
 ALTER TABLE `airport_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `booked_flight`
@@ -240,12 +236,6 @@ ALTER TABLE `flight_list`
 --
 ALTER TABLE `system_settings`
   MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
