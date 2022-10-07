@@ -3,7 +3,7 @@
 </style>
 <nav id="sidebar" class='mx-lt-5 bg-dark' style="background-image: url(assets/img/background13.jpeg);">
 		
-		<div class="sidebar-list">
+		<div class="sidebar-list" style="margin-top: 100px;" >
 
 				<a href="index.php?page=home" class="nav-item nav-home"><span class='icon-field'><i class="fa fa-home"></i></span> Home</a>
 				<a href="index.php?page=booked" class="nav-item nav-booked"><span class='icon-field'><i class="fa fa-book"></i></span> Booked</a>
