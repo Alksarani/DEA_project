@@ -7,7 +7,7 @@ if($qry->num_rows > 0){
 	}
 }
  ?>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 75px;" >
 	
 	<div class="card col-lg-12">
 		<div class="card-body">
