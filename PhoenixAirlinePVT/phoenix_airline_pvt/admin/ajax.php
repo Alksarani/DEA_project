@@ -47,9 +47,9 @@ if($action == "save_settings"){
 if($action == "save_airlines"){
 	$save = $crud->save_airlines();
 	if($save)
-		echo $save;
+		echo  $save;
 }
-if($action == "delete_airlines"){
+if ($action == "delete_airlines"){
 	$save = $crud->delete_airlines();
 	if($save)
 		echo $save;
